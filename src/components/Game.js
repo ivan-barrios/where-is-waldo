@@ -3,10 +3,11 @@ import { getDocs, collection } from "firebase/firestore";
 import img from "../img/wiwImg.jpg";
 import { useState } from "react";
 
-const Game = () => {
+const Game = ({ setBearColor, setMonkeyColor, setSealColor }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [clickCoords, setClickCoords] = useState({});
   const [menuCoords, setMenuCoords] = useState({});
+  const [foundAnimal, setFoundAnimal] = useState("");
 
   const getClickPosition = (e) => {
     setMenuCoords({ x: e.pageX, y: e.pageY });
@@ -15,7 +16,6 @@ const Game = () => {
     const y = e.clientY - rect.top;
     const realX = (x * 955) / e.target.clientWidth;
     const realY = (y * 1536) / e.target.clientHeight;
-    console.log(realX, realY);
     return {
       realX,
       realY,
@@ -29,13 +29,30 @@ const Game = () => {
 
   const coordsCollection = collection(db, "charactersCoords");
 
-  const handleMenuClick = (e) => {
+  const handleMenuClick = async (e) => {
     setShowMenu(!showMenu);
+    setFoundAnimal(e.target.innerText);
+    console.log(foundAnimal);
     const id = `${e.target.innerText.toLowerCase()}Coords`;
-    const charactersCoords = getCharactersCoords(id);
-    charactersCoords.then((coords) => {
-      //Correct?
-    });
+    const charactersCoords = await getCharactersCoords(id);
+    const verifyX = Math.abs(clickCoords.realX - charactersCoords.x) < 60;
+    const verifyY = Math.abs(clickCoords.realY - charactersCoords.y) < 60;
+    console.log(clickCoords.realX, clickCoords.realY);
+    if (verifyX && verifyY) {
+      switch (foundAnimal) {
+        case "bear":
+          setBearColor("green");
+          break;
+        case "monkey":
+          setMonkeyColor("green");
+          break;
+        case "seal":
+          setSealColor("green");
+          break;
+        default:
+          console.log("Sorry, there was an error finding the animal");
+      } //logging in the first click... why?
+    }
   };
 
   const getCharactersCoords = async (id) => {
