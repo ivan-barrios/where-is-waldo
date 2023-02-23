@@ -31,23 +31,29 @@ const Game = () => {
 
   const handleMenuClick = (e) => {
     setShowMenu(!showMenu);
-    const getCharactersCoords = async () => {
-      try {
-        const data = await getDocs(coordsCollection);
-        const filteredData = data.docs.map((doc) => ({ ...doc.data() }));
-        return filteredData;
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    const charactersCoords = getCharactersCoords();
-    const coords = getClickPosition(e);
-    const verifyX = Math.abs();
+    const id = `${e.target.innerText.toLowerCase()}Coords`;
+    const charactersCoords = getCharactersCoords(id);
+    charactersCoords.then((coords) => {
+      //Correct?
+    });
+  };
+
+  const getCharactersCoords = async (id) => {
+    try {
+      const data = await getDocs(coordsCollection);
+      const filteredData = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      return filteredData.find((data) => data.id === id);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
     <div>
-      <div className="flex justify-center bg-slate-900">
+      <div className="flex justify-center bg-slate-900 h-full">
         <div>
           <img src={img} alt="Waldo Img" onClick={handleClick} />
           {showMenu ? (
