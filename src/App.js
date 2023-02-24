@@ -82,7 +82,7 @@ const App = () => {
         <Route path="/leadership" element={<Leadership />} />
       </Routes>
       {displayWin ? (
-        <div className="text-white text-xl lg:text-5xl md:text-4xl absolute top-0 left-0 h-full w-full bg-black bg-opacity-80 flex flex-col gap-16 items-center justify-center">
+        <div className="text-white text-xl lg:text-5xl md:text-4xl fixed top-0 left-0 h-full w-full bg-black bg-opacity-80 flex flex-col gap-16 items-center justify-center">
           <h1 className="text-6xl text-lime-200 font-extrabold">You Won!</h1>
           <form className="flex flex-col gap-4 items-center">
             <label id="name">Your Name:</label>
@@ -107,7 +107,7 @@ const App = () => {
         </div>
       ) : null}
       {displayRestart ? (
-        <form className="flex justify-center items-center bg-black bg-opacity-80 absolute top-0 left-0 w-full h-full">
+        <form className="flex justify-center items-center bg-black bg-opacity-80 fixed top-0 left-0 w-full h-full">
           <button
             className="p-12 rounded-2xl hover:bg-slate-600 bg-slate-900 text-white text-6xl"
             type="submit"

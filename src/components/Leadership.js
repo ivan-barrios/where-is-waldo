@@ -30,7 +30,10 @@ const Leadership = () => {
 
   return (
     <div className="bg-slate-900 p-4 text-white h-screen flex gap-12">
-      <Link to="/" className="rounded-xl p-4 bg-black w-fit h-fit text-4xl">
+      <Link
+        to="/"
+        className="rounded-xl p-4 hover:bg-neutral-700 bg-black w-fit h-fit text-4xl"
+      >
         ⇐
       </Link>
       <div className="w-10/12 p-2 flex flex-col gap-8 border-2 border-white">
