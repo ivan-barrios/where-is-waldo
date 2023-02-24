@@ -3,7 +3,7 @@ import bear from "../img/Bear.png";
 import seal from "../img/Seal.png";
 import monkey from "../img/Monkey.png";
 
-const Header = ({ bearColor, monkeyColor, sealColor }) => {
+const Header = ({ bearColor, monkeyColor, sealColor, minutes, seconds }) => {
   return (
     <div className="grid grid-cols-3 items-center justify-items-center p-4 bg-slate-800 text-white">
       <div className="flex justify-around items-center w-full h-full">
@@ -29,7 +29,9 @@ const Header = ({ bearColor, monkeyColor, sealColor }) => {
         </div>
       </div>
       <div>
-        <div className="text-xl lg:text-7xl md:text-5xl">Timer</div>
+        <div className="text-xl lg:text-7xl md:text-5xl">
+          {minutes}:{seconds}
+        </div>
       </div>
       <Link to="/leadership" className="text-xl lg:text-7xl md:text-5xl">
         <div>Leadership</div>
