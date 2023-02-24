@@ -1,0 +1,49 @@
+[debug] [2023-02-24T20:07:28.626Z] ----------------------------------------------------------------------
+[debug] [2023-02-24T20:07:28.628Z] Command:       /home/ivan-barrios/.nvm/versions/node/v18.14.0/bin/node /home/ivan-barrios/.nvm/versions/node/v18.14.0/bin/firebase init
+[debug] [2023-02-24T20:07:28.628Z] CLI Version:   11.23.1
+[debug] [2023-02-24T20:07:28.629Z] Platform:      linux
+[debug] [2023-02-24T20:07:28.629Z] Node Version:  v18.14.0
+[debug] [2023-02-24T20:07:28.629Z] Time:          Fri Feb 24 2023 17:07:28 GMT-0300 (Argentina Standard Time)
+[debug] [2023-02-24T20:07:28.629Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-24T20:07:28.697Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-24T20:07:28.697Z] > authorizing via signed-in user (ivanbar8112003@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/ivan-barrios/repos/where-is-waldo
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-02-24T20:07:40.319Z] Using project from CLI flag: where-is-waldo-d98e3
+[debug] [2023-02-24T20:07:40.323Z] > refreshing access token with scopes: []
+[debug] [2023-02-24T20:07:40.328Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-24T20:07:40.329Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-24T20:07:40.545Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-24T20:07:40.545Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-24T20:07:40.563Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/where-is-waldo-d98e3 [none]
+[debug] [2023-02-24T20:07:40.972Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/where-is-waldo-d98e3 200
+[debug] [2023-02-24T20:07:40.973Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/where-is-waldo-d98e3 {"projectId":"where-is-waldo-d98e3","projectNumber":"319222316304","displayName":"where-is-waldo","name":"projects/where-is-waldo-d98e3","resources":{"hostingSite":"where-is-waldo-d98e3"},"state":"ACTIVE","etag":"1_9b2cb90a-351d-41d0-b8c9-de6380253912"}
+[info] i  Using project where-is-waldo-d98e3 (where-is-waldo) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
