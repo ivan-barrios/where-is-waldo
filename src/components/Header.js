@@ -30,7 +30,8 @@ const Header = ({ bearColor, monkeyColor, sealColor, minutes, seconds }) => {
       </div>
       <div>
         <div className="text-xl lg:text-7xl md:text-5xl">
-          {minutes}:{seconds}
+          {minutes < 10 ? "0" + minutes : minutes}:
+          {seconds < 10 ? "0" + seconds : seconds}
         </div>
       </div>
       <Link to="/leadership" className="text-xl lg:text-7xl md:text-5xl">
